@@ -9,6 +9,16 @@ export default function Hero() {
 
   return (
     <section id="home" className="relative h-[100svh] w-full overflow-hidden">
+      {/* CSS fallback background — visible when no video loads */}
+      <div className="absolute inset-0 bg-gradient-to-br from-onyx-950 via-[#0f0e0a] to-onyx-950" />
+      <div
+        className="absolute inset-0 opacity-30"
+        style={{
+          backgroundImage:
+            'radial-gradient(ellipse 80% 50% at 60% 40%, oklch(0.45 0.08 82 / 0.25), transparent)',
+        }}
+      />
+
       <video
         autoPlay
         muted
@@ -53,7 +63,7 @@ export default function Hero() {
 
           <Rise key="sub" className="mt-7 max-w-xl text-lg leading-relaxed text-stone-300 md:text-xl">
             Premium Innen- und Außenreinigung in&nbsp;
-            <span className="text-stone-100">[ORT]</span>. Handarbeit, Leidenschaft,
+            <span className="text-stone-100">München</span>. Handarbeit, Leidenschaft,
             sichtbares Ergebnis.
           </Rise>
 

@@ -35,27 +35,28 @@ export default function Footer() {
     <footer className="border-t border-white/5 bg-onyx-950">
       <div className="mx-auto max-w-[1400px] px-6 py-20 md:px-10">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-3 md:gap-16">
-          {/* Kontakt */}
+
+          {/* Brand + Kontakt */}
           <div>
             <div className="mb-6 flex items-baseline gap-2">
-              <span className="font-serif text-2xl text-stone-50">[DEIN&nbsp;NAME]</span>
+              <span className="font-serif text-2xl text-stone-50">Petasync</span>
               <span className="text-[var(--gold)] text-xs font-light tracking-[0.2em]">DETAILING</span>
             </div>
             <p className="mb-6 max-w-xs text-sm leading-relaxed text-stone-400">
-              Premium Autoaufbereitung in [ORT]. Nach Terminvereinbarung geöffnet.
+              Premium Autoaufbereitung in München. Nach Terminvereinbarung — für Fahrzeuge, die es verdienen.
             </p>
             <ul className="space-y-3 text-sm text-stone-300">
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[var(--gold)]" strokeWidth={1.5} />
-                Musterstraße 12, [PLZ] [ORT]
+                Arnulfstraße 12, 80335 München
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="mt-0.5 h-4 w-4 shrink-0 text-[var(--gold)]" strokeWidth={1.5} />
-                +49 (0) 000 000 000
+                +49 (0) 89 123 456 78
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="mt-0.5 h-4 w-4 shrink-0 text-[var(--gold)]" strokeWidth={1.5} />
-                hallo@deinname.de
+                hallo@petasync-detailing.de
               </li>
             </ul>
           </div>
@@ -71,10 +72,10 @@ export default function Footer() {
               ))}
             </ul>
             <div className="mt-8 text-xs uppercase tracking-[0.25em] text-stone-500">Öffnungszeiten</div>
-            <div className="mt-4 space-y-1 text-sm text-stone-300">
+            <div className="mt-4 space-y-1.5 text-sm text-stone-300">
               <div className="flex justify-between"><span>Mo — Fr</span><span>08:00 — 18:00</span></div>
-              <div className="flex justify-between"><span>Sa</span><span>09:00 — 14:00</span></div>
-              <div className="flex justify-between text-stone-500"><span>So</span><span>geschlossen</span></div>
+              <div className="flex justify-between"><span>Samstag</span><span>09:00 — 14:00</span></div>
+              <div className="flex justify-between text-stone-500"><span>Sonntag</span><span>Geschlossen</span></div>
             </div>
           </div>
 
@@ -88,7 +89,7 @@ export default function Footer() {
                   href="#"
                   className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-stone-300 transition-all hover:border-[var(--gold)]/60 hover:text-[var(--gold)]"
                 >
-                  <Icon className="h-4 w-4" strokeWidth={1.5} />
+                  <Icon />
                 </a>
               ))}
             </div>
@@ -118,7 +119,7 @@ export default function Footer() {
 
       <div className="border-t border-white/5">
         <div className="mx-auto flex max-w-[1400px] flex-col items-start justify-between gap-3 px-6 py-6 text-xs text-stone-500 md:flex-row md:items-center md:px-10">
-          <div>© {new Date().getFullYear()} [DEIN NAME] Detailing. Alle Rechte vorbehalten.</div>
+          <div>© {new Date().getFullYear()} Petasync Detailing. Alle Rechte vorbehalten.</div>
           <div className="flex gap-6">
             <a href="#" className="hover:text-stone-300">Impressum</a>
             <a href="#" className="hover:text-stone-300">Datenschutz</a>

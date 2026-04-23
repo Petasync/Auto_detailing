@@ -33,7 +33,7 @@ export default function Navbar() {
     >
       <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-4 md:px-10">
         <a href="#home" className="flex items-baseline gap-2 text-stone-100">
-          <span className="font-serif text-2xl tracking-tight">[DEIN&nbsp;NAME]</span>
+          <span className="font-serif text-2xl tracking-tight">Petasync</span>
           <span className="text-[var(--gold)] text-sm font-light tracking-[0.2em]">DETAILING</span>
         </a>
 

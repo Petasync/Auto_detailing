@@ -2,6 +2,9 @@ import { useState, useRef, useCallback } from 'react'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { MotionSection, Rise } from './motion'
 
+const AFTER_SRC = 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=1400&q=85'
+const BEFORE_SRC = 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=1400&q=85'
+
 export default function BeforeAfter() {
   const [pos, setPos] = useState(48)
   const wrapRef = useRef(null)
@@ -64,31 +67,31 @@ export default function BeforeAfter() {
             onPointerUp={onPointerUp}
             onPointerCancel={onPointerUp}
           >
-            {/* AFTER (base layer) */}
+            {/* AFTER (base layer — clean car) */}
             <img
-              src="/images/ba1-wheel-before.jpg"
-              alt="Nachher"
+              src={AFTER_SRC}
+              alt="Nachher — aufbereitetes Fahrzeug"
               className="absolute inset-0 h-full w-full object-cover"
               draggable={false}
             />
 
-            {/* BEFORE (clipped layer) */}
+            {/* BEFORE (clipped layer — simulated dirty state) */}
             <div
               className="absolute inset-0"
               style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}
             >
               <img
-                src="/images/ba1-wheel-before.jpg"
-                alt="Vorher"
+                src={BEFORE_SRC}
+                alt="Vorher — unbehandeltes Fahrzeug"
                 className="h-full w-full object-cover"
                 draggable={false}
-                style={{ filter: 'saturate(0.35) brightness(0.55) contrast(0.9)' }}
+                style={{ filter: 'saturate(0.2) brightness(0.45) contrast(1.05) sepia(0.3)' }}
               />
               <div
-                className="absolute inset-0 mix-blend-multiply opacity-70"
+                className="absolute inset-0 mix-blend-multiply opacity-80"
                 style={{
                   backgroundImage:
-                    'radial-gradient(circle at 20% 30%, rgba(110,90,60,0.55), transparent 45%), radial-gradient(circle at 70% 60%, rgba(80,70,50,0.5), transparent 50%), radial-gradient(circle at 40% 80%, rgba(90,80,60,0.4), transparent 40%)'
+                    'radial-gradient(circle at 20% 30%, rgba(110,90,60,0.6), transparent 45%), radial-gradient(circle at 70% 60%, rgba(80,70,50,0.55), transparent 50%), radial-gradient(circle at 40% 80%, rgba(90,80,60,0.45), transparent 40%)'
                 }}
               />
             </div>

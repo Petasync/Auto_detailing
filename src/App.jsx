@@ -5,9 +5,12 @@ import Hero from './components/Hero'
 import UspBar from './components/UspBar'
 import Services from './components/Services'
 import BeforeAfter from './components/BeforeAfter'
+import Galerie from './components/Galerie'
 import Process from './components/Process'
+import UeberUns from './components/UeberUns'
 import Testimonials from './components/Testimonials'
 import CtaBanner from './components/CtaBanner'
+import Buchung from './components/Buchung'
 import Footer from './components/Footer'
 import TweakPanel, { applyTweaks, TWEAK_DEFAULTS } from './components/TweakPanel'
 
@@ -35,9 +38,12 @@ export default function App() {
         <UspBar />
         <Services />
         <BeforeAfter />
+        <Galerie />
         <Process />
+        <UeberUns />
         <Testimonials />
         <CtaBanner />
+        <Buchung />
       </main>
       <Footer />
 
