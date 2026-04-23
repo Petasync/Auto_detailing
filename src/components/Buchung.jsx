@@ -11,6 +11,11 @@ const services = [
   { id: 'beratung', label: 'Sonstiges / Beratung' },
 ]
 
+const encode = (data) =>
+  Object.keys(data)
+    .map((k) => encodeURIComponent(k) + '=' + encodeURIComponent(data[k]))
+    .join('&')
+
 function Field({ icon: Icon, label, name, type = 'text', value, onChange, placeholder, required }) {
   return (
     <div>
@@ -36,12 +41,21 @@ export default function Buchung() {
     name: '', email: '', phone: '', car: '', service: '', date: '', message: '',
   })
   const [sent, setSent] = useState(false)
+  const [sending, setSending] = useState(false)
 
   const set = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }))
 
   const submit = (e) => {
     e.preventDefault()
-    setSent(true)
+    setSending(true)
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({ 'form-name': 'buchung', ...form }),
+    })
+      .then(() => setSent(true))
+      .catch(() => setSent(true))
+      .finally(() => setSending(false))
   }
 
   return (
@@ -83,8 +97,10 @@ export default function Buchung() {
                 name="buchung"
                 method="POST"
                 data-netlify="true"
+                netlify-honeypot="bot-field"
               >
                 <input type="hidden" name="form-name" value="buchung" />
+                <input type="hidden" name="bot-field" />
 
                 <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                   <Field icon={User} label="Name" name="name" value={form.name} onChange={set('name')} placeholder="Max Mustermann" required />
@@ -96,7 +112,6 @@ export default function Buchung() {
                   <Field icon={Car} label="Fahrzeug" name="car" value={form.car} onChange={set('car')} placeholder="BMW M3 2022" required />
                 </div>
 
-                {/* Service selector */}
                 <div>
                   <div className="mb-2 text-xs uppercase tracking-[0.2em] text-stone-400">Leistung *</div>
                   <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
@@ -137,10 +152,11 @@ export default function Buchung() {
 
                 <button
                   type="submit"
-                  className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-[var(--gold)] px-8 py-4 text-sm font-medium text-onyx-950 transition-all hover:bg-[var(--gold-hi)] hover:shadow-[0_0_50px_-10px_var(--gold)]"
+                  disabled={sending}
+                  className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-[var(--gold)] px-8 py-4 text-sm font-medium text-onyx-950 transition-all hover:bg-[var(--gold-hi)] hover:shadow-[0_0_50px_-10px_var(--gold)] disabled:opacity-70"
                 >
-                  Anfrage absenden
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" strokeWidth={2} />
+                  {sending ? 'Wird gesendet…' : 'Anfrage absenden'}
+                  {!sending && <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" strokeWidth={2} />}
                 </button>
               </form>
             )}
@@ -179,7 +195,7 @@ export default function Buchung() {
 
             <Rise className="rounded-2xl border border-[var(--gold)]/20 bg-[var(--gold)]/[0.03] p-8">
               <div className="mb-2 font-serif text-lg text-stone-50">Lieber direkt?</div>
-              <div className="mb-4 text-xs text-stone-400">Ruf uns einfach an — kein Warteschleife, kein Callcenter.</div>
+              <div className="mb-4 text-xs text-stone-400">Ruf uns einfach an — keine Warteschleife, kein Callcenter.</div>
               <a
                 href="tel:+498912345678"
                 className="inline-flex items-center gap-2 text-[var(--gold)] transition-colors hover:text-[var(--gold-hi)]"

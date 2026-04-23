@@ -4,6 +4,7 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import UspBar from './components/UspBar'
 import Services from './components/Services'
+import Preise from './components/Preise'
 import BeforeAfter from './components/BeforeAfter'
 import Galerie from './components/Galerie'
 import Process from './components/Process'
@@ -37,6 +38,7 @@ export default function App() {
         <Hero />
         <UspBar />
         <Services />
+        <Preise />
         <BeforeAfter />
         <Galerie />
         <Process />

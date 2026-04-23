@@ -1,18 +1,15 @@
 import { ArrowUpRight } from 'lucide-react'
 import { MotionSection, Rise } from './motion'
 
-function ServiceCard({ videoSrc, poster, eyebrow, title, bullets, idx }) {
+function ServiceCard({ src, eyebrow, title, bullets, idx }) {
   return (
     <Rise className="group relative cursor-pointer">
       <div className="relative overflow-hidden rounded-2xl ring-1 ring-white/5">
         <div className="relative aspect-[4/5] overflow-hidden bg-onyx-900">
-          <video
-            src={videoSrc}
-            poster={poster}
-            autoPlay
-            muted
-            loop
-            playsInline
+          <img
+            src={src}
+            alt={title}
+            loading="lazy"
             className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-onyx-950 via-onyx-950/30 to-transparent" />
@@ -41,10 +38,10 @@ function ServiceCard({ videoSrc, poster, eyebrow, title, bullets, idx }) {
           ))}
         </ul>
         <a
-          href="#leistungen"
+          href="#buchung"
           className="group/link inline-flex items-center gap-2 text-sm text-[var(--gold)] transition-colors hover:text-[var(--gold-hi)]"
         >
-          Mehr erfahren
+          Termin buchen
           <ArrowUpRight className="h-4 w-4 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" strokeWidth={1.5} />
         </a>
       </div>
@@ -76,16 +73,14 @@ export default function Services() {
           <ServiceCard
             idx="1"
             eyebrow="Außen"
-            videoSrc="/videos/reel-exterior.mp4"
-            poster="/images/hero-poster.jpg"
+            src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=900&q=80"
             title="Außenreinigung & Politur"
             bullets={['Handwäsche', 'Lackpolitur', 'Felgen & Reifen']}
           />
           <ServiceCard
             idx="2"
             eyebrow="Innen"
-            videoSrc="/videos/reel-interior.mp4"
-            poster="/images/studio-wide.jpg"
+            src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?w=900&q=80"
             title="Innenraumaufbereitung"
             bullets={['Polster & Leder', 'Armaturen', 'Geruchsneutralisation']}
           />

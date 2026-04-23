@@ -6,6 +6,7 @@ import BtnPrimary from './BtnPrimary'
 const links = [
   ['Home', '#home'],
   ['Leistungen', '#leistungen'],
+  ['Preise', '#preise'],
   ['Galerie', '#galerie'],
   ['Über uns', '#ueber-uns'],
   ['Buchung', '#buchung'],
