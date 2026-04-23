@@ -24,9 +24,9 @@ const YoutubeIcon = () => (
 const navLinks = [
   ['Home', '#home'],
   ['Leistungen', '#leistungen'],
+  ['Preise', '#preise'],
   ['Galerie', '#galerie'],
   ['Über uns', '#ueber-uns'],
-  ['Prozess', '#prozess'],
   ['Buchung', '#buchung'],
 ]
 
@@ -52,11 +52,11 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="mt-0.5 h-4 w-4 shrink-0 text-[var(--gold)]" strokeWidth={1.5} />
-                +49 (0) 89 123 456 78
+                <a href="tel:+498912345678" className="transition-colors hover:text-[var(--gold)]">+49 (0) 89 123 456 78</a>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="mt-0.5 h-4 w-4 shrink-0 text-[var(--gold)]" strokeWidth={1.5} />
-                hallo@petasync-detailing.de
+                <a href="mailto:hallo@petasync-detailing.de" className="transition-colors hover:text-[var(--gold)]">hallo@petasync-detailing.de</a>
               </li>
             </ul>
           </div>
@@ -121,9 +121,9 @@ export default function Footer() {
         <div className="mx-auto flex max-w-[1400px] flex-col items-start justify-between gap-3 px-6 py-6 text-xs text-stone-500 md:flex-row md:items-center md:px-10">
           <div>© {new Date().getFullYear()} Petasync Detailing. Alle Rechte vorbehalten.</div>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-stone-300">Impressum</a>
-            <a href="#" className="hover:text-stone-300">Datenschutz</a>
-            <a href="#" className="hover:text-stone-300">AGB</a>
+            <a href="/impressum.html" className="hover:text-stone-300">Impressum</a>
+            <a href="/datenschutz.html" className="hover:text-stone-300">Datenschutz</a>
+            <a href="/agb.html" className="hover:text-stone-300">AGB</a>
           </div>
         </div>
       </div>

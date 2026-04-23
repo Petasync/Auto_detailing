@@ -4,12 +4,13 @@ import BtnPrimary from './BtnPrimary'
 
 export default function CtaBanner() {
   return (
-    <MotionSection id="buchung" className="relative overflow-hidden">
+    <MotionSection className="relative overflow-hidden">
       <div className="relative">
         <img
-          src="/images/studio-wide.jpg"
+          src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=1920&q=85"
           alt=""
           className="absolute inset-0 h-full w-full object-cover"
+          loading="lazy"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-onyx-950/70 via-onyx-950/80 to-onyx-950/90" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,#0a0a0b_85%)]" />
@@ -32,7 +33,7 @@ export default function CtaBanner() {
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" strokeWidth={1.5} />
             </BtnPrimary>
             <a
-              href="tel:+49"
+              href="tel:+498912345678"
               className="inline-flex items-center gap-2 text-sm text-stone-300 transition-colors hover:text-stone-50"
             >
               <Phone className="h-4 w-4 text-[var(--gold)]" strokeWidth={1.5} />

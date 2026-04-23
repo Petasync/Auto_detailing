@@ -13,6 +13,7 @@ import Testimonials from './components/Testimonials'
 import CtaBanner from './components/CtaBanner'
 import Buchung from './components/Buchung'
 import Footer from './components/Footer'
+import ScrollToTop from './components/ScrollToTop'
 import TweakPanel, { applyTweaks, TWEAK_DEFAULTS } from './components/TweakPanel'
 
 export default function App() {
@@ -48,6 +49,7 @@ export default function App() {
         <Buchung />
       </main>
       <Footer />
+      <ScrollToTop />
 
       <AnimatePresence>
         {tweakOpen && (

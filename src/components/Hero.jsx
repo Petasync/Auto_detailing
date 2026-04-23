@@ -9,7 +9,7 @@ export default function Hero() {
 
   return (
     <section id="home" className="relative h-[100svh] w-full overflow-hidden">
-      {/* CSS fallback background — visible when no video loads */}
+      {/* Dark base — always visible */}
       <div className="absolute inset-0 bg-gradient-to-br from-onyx-950 via-[#0f0e0a] to-onyx-950" />
       <div
         className="absolute inset-0 opacity-30"
@@ -19,12 +19,13 @@ export default function Hero() {
         }}
       />
 
+      {/* Video with Unsplash poster — poster shows when video src is unavailable */}
       <video
         autoPlay
         muted
         loop
         playsInline
-        poster="/images/hero-poster.jpg"
+        poster="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1920&q=85"
         className="absolute inset-0 h-full w-full object-cover"
       >
         <source src="/videos/hero.mp4" type="video/mp4" />

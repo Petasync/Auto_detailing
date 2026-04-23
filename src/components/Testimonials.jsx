@@ -6,16 +6,19 @@ const items = [
     q: 'Mein 911er hat nach 15 Jahren wieder ausgesehen wie am ersten Tag. Das Studio ist ein anderes Level.',
     name: 'Lukas M.',
     role: 'Porsche 911',
+    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&q=80',
   },
   {
     q: 'Kompromisslos. Die Liebe zum Detail sieht man an jeder Naht, an jedem Spalt — beeindruckend.',
     name: 'Sabine K.',
     role: 'Range Rover Sport',
+    avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=120&q=80',
   },
   {
     q: 'Termin binnen zwei Tagen, Abholung am Abend. Unkomplizierter geht\'s nicht und das Ergebnis spricht für sich.',
     name: 'David R.',
     role: 'BMW M4 Competition',
+    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&q=80',
   },
 ]
 
@@ -61,14 +64,15 @@ export default function Testimonials() {
                 <p className="font-serif text-xl leading-snug text-stone-100">
                   <span className="text-[var(--gold)]">„</span>
                   {t.q}
-                  <span className="text-[var(--gold)]">"</span>
+                  <span className="text-[var(--gold)]">“</span>
                 </p>
               </div>
               <div className="mt-8 flex items-center gap-4 border-t border-white/5 pt-6">
-                <div
-                  className="h-11 w-11 shrink-0 rounded-full ring-1 ring-white/10"
-                  style={{ background: 'repeating-linear-gradient(45deg, #2a2a2d 0 6px, #1a1a1d 6px 12px)' }}
-                  aria-hidden
+                <img
+                  src={t.avatar}
+                  alt={t.name}
+                  loading="lazy"
+                  className="h-11 w-11 shrink-0 rounded-full object-cover ring-1 ring-white/10"
                 />
                 <div>
                   <div className="text-sm text-stone-50">{t.name}</div>
